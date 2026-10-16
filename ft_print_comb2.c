@@ -6,7 +6,7 @@
 /*   By: tibabaya <tibabaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 00:47:37 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/17 00:55:47 by tibabaya         ###   ########.fr       */
+/*   Updated: 2026/10/17 02:31:36 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -21,7 +21,7 @@ void	char_creation(char *combo)
 	combo[5] = '\0';
 }
 
-void set2_genrator(char *combo, char *start)
+void	set2_genrator(char *combo, char *start)
 {
 	if (*combo != ' ')
 	{
@@ -36,13 +36,13 @@ void set2_genrator(char *combo, char *start)
 	}
 	else
 	{
-		return;
+		return ;
 	}
 }
 
 void	ft_print_comb2(void)
 {
-	char combo[6];
+	char	combo[6];
 
 	char_creation(combo);
 	write(1, &combo, 5);
