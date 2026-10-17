@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tibabaya <tibabaya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/17 00:47:37 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/17 02:31:36 by tibabaya         ###   ########.fr       */
+/*   Created: 2026/10/17 14:00:39 by tibabaya          #+#    #+#             */
+/*   Updated: 2026/10/17 14:07:56 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -47,7 +47,7 @@ void	ft_print_comb2(void)
 	char_creation(combo);
 	write(1, &combo, 5);
 	write(1, ", ", 2);
-	set2_genrator(&combo[4], combo);
+	set2_genrator(&combo[4], comb);
 }
 
 int	main(void)
