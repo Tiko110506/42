@@ -6,7 +6,7 @@
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:18:23 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/17 14:36:58 by tibabaya         ###   ########.fr       */
+/*   Updated: 2026/10/18 01:46:20 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -20,13 +20,9 @@ void	ft_putnbr(int nb)
 		write(1, "-2147483648", 11);
 		return ;
 	}
-	if (nb == 0)
-	{
-		write(1, "0", 1);
-		return ;
-	}
 	if (nb < 0)
 	{
+		write(1, "-", 1);
 		nb = -nb;
 	}
 	if (nb >= 10)

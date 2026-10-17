@@ -6,7 +6,7 @@
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:00:39 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/17 14:50:06 by tibabaya         ###   ########.fr       */
+/*   Updated: 2026/10/18 01:41:39 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -45,10 +45,4 @@ void	ft_print_comb2(void)
 		}
 		a++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb2();
-	return (0);
 }

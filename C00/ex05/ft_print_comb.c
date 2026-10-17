@@ -6,60 +6,47 @@
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:13:37 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/16 16:03:32 by tibabaya         ###   ########.fr       */
+/*   Updated: 2026/10/18 01:37:32 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	printer(char num[])
+void	ft_putchar(char n)
 {
-	write(1, &num[0], 1);
-	write(1, &num[1], 1);
-	write(1, &num[2], 1);
+	write(1, &n, 1);
 }
 
-void	comma_printer(char num[])
+void	three_digit_printer(int a, int b)
 {
-	if (num[0] != '7')
-	{
-		write(1, ", ", 1);
-	}
-}
-
-void	combo_generator(char num[])
-{
-	while (num[0] < '8')
-	{
-		printer(num);
-		comma_printer(num);
-		if (num[2] != '9')
-		{
-			num[2]++;
-		}
-		else
-		{
-			if (num[2] == '9')
-			{
-				num[1]++;
-				num[2] = num[1] + 1;
-				if (num[1] == '9')
-				{
-					num[0]++;
-					num[1] = num[0] + 1;
-					num[2] = num[1] + 1;
-				}
-			}
-		}
-	}
+	ft_putchar(a + '0');
+	ft_putchar((b / 10) + '0');
+	ft_putchar((b % 10) + '0');
 }
 
 void	ft_print_combo(void)
 {
-	char	num[4];
+	int	a;
+	int	b;
 
-	num[0] = '0';
-	num[1] = '1';
-	num[2] = '2';
-	num[3] = '\0';
-	combo_generator(num);
+	a = 0;
+	b = 12;
+	while (a < 7)
+	{
+		while (b <= 89)
+		{
+			three_digit_printer(a, b);
+			write(1, ", ", 2);
+			if (b % 10 != 9)
+			{
+				b += 1;
+			}
+			else
+			{
+				b = b + (b / 10) + 3;
+			}
+		}
+		a += 1;
+		b = (a + 1) * 10 + (a + 2);
+	}
+	write(1, "789", 3);
 }
