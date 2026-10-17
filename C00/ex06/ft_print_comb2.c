@@ -6,48 +6,45 @@
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:00:39 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/17 14:07:56 by tibabaya         ###   ########.fr       */
+/*   Updated: 2026/10/17 14:50:06 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	char_creation(char *combo)
+void	ft_putchar(char n)
 {
-	combo[0] = '0';
-	combo[1] = '0';
-	combo[2] = ' ';
-	combo[3] = '0';
-	combo[4] = '1';
-	combo[5] = '\0';
+	write(1, &n, 1);
 }
 
-void	set2_genrator(char *combo, char *start)
+void	two_digit_printer(int n)
 {
-	if (*combo != ' ')
-	{
-		while (*combo != '9')
-		{
-			*combo += 1;
-			write(1, start, 5);
-			write(1, ", ", 2);
-		}
-		combo--;
-		set2_genrator(combo, start);
-	}
-	else
-	{
-		return ;
-	}
+	ft_putchar((n / 10) + '0');
+	ft_putchar((n % 10) + '0');
 }
 
 void	ft_print_comb2(void)
 {
-	char	combo[6];
+	int	a;
+	int	b;
 
-	char_creation(combo);
-	write(1, &combo, 5);
-	write(1, ", ", 2);
-	set2_genrator(&combo[4], comb);
+	a = 0;
+	while (a <= 98)
+	{
+		b = a + 1;
+		while (b <= 99)
+		{
+			two_digit_printer(a);
+			ft_putchar(' ');
+			two_digit_printer(b);
+			if (a != 98 || b != 99)
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
+			b++;
+		}
+		a++;
+	}
 }
 
 int	main(void)
