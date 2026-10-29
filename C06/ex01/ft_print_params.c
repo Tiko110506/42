@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clues_array.c                                      :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/24 20:08:43 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/24 21:31:25 by tibabaya         ###   ########.fr       */
+/*   Created: 2026/10/26 13:24:53 by tibabaya          #+#    #+#             */
+/*   Updated: 2026/10/26 13:27:49 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include <unistd.h>
 
-void	arr_free(int *arr, int n)
-{
-	free(arr);
-}
-
-int	*arr(char *str, int n)
+int	main(int argc, char **argv)
 {
 	int	i;
-	int	*arr;
+	int	j;
 
-	i = 0;
-	arr = maloc(sizeof(int) * (n * 4));
-	if (arr)
+	i = 1;
+	while (i < argc)
 	{
-		free(arr);
-		return (NULL);
-	}
-	while (str[i] != '\0')
-	{
-		if (str[i] != ' ')
+		j = 0;
+		while (argv[i][j] != '\0')
 		{
-			arr[i] = str[i] - '0';
+			write(1, &argv[i][j], 1);
+			j++;
 		}
 		i++;
+		write(1, "\n", 1);
 	}
-	return (arr);
 }

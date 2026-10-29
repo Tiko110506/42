@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_creator.c                                   :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/24 16:00:20 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/24 18:58:07 by tibabaya         ###   ########.fr       */
+/*   Created: 2026/10/26 13:20:39 by tibabaya          #+#    #+#             */
+/*   Updated: 2026/10/26 13:23:27 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include <unistd.h>
 
-void	free_matrix(int **matrix, int rows)
+int	main(int argc, char **argv)
 {
-	while (rows > 0)
-	{
-		free(matrix[rows - 1]);
-		rows--;
-	}
-	free(matrix);
-}
-
-int	**matrix_creator(int n)
-{
-	int	**my_matrix;
 	int	i;
 
 	i = 0;
-	my_matrix = malloc(sizeof(*my_matrix) * n);
-	if (!(my_matrix))
+	if (argc)
 	{
-		return (NULL);
-	}
-	while (i < n)
-	{
-		my_matrix[i] = malloc(sizeof(int) * n);
-		if (!(my_matrix[i]))
+		while (argv[0][i] != '\0')
 		{
-			free_matrix(my_matrix, i);
-			return (NULL);
+			write(1, &argv[0][i], 1);
+			i++;
 		}
-		i++;
+		write(1, "\n", 1);
 	}
-	return (my_matrix);
+	return (0);
 }

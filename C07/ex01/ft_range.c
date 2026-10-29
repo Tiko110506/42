@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/24 12:13:32 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/24 18:59:50 by tibabaya         ###   ########.fr       */
+/*   Created: 2026/10/27 12:01:58 by tibabaya          #+#    #+#             */
+/*   Updated: 2026/10/27 12:27:05 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include <stdlib.h>
 
-int		input_checker(char *str);
-int		**matrix_creator(int n);
-void	matrix_free_er(int **matrix, int size);
-
-int	main(int argc, char **argv)
+int	*ft_range(int min, int max)
 {
-	int	**matrix;
-	int	n;
+	int	*arr;
+	int	i;
 
-	if (argc != 2)
+	if (min >= max)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		return (NULL);
 	}
-	if (!(input_checker(argv[1])))
+	arr = malloc(sizeof(int) * (max - min));
+	if (!arr)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		return (NULL);
 	}
-	n = input_checker(argv[1]);
-	matrix = matrix_creator(n);
-	matrix_free_er(matrix, n);
-	return (0);
+	i = 0;
+	while (min < max)
+	{
+		arr[i] = min;
+		i++;
+		min++;
+	}
+	return (arr);
 }

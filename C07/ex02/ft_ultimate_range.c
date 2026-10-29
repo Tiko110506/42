@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   puzzle_solver.c                                    :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/24 19:46:30 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/24 21:33:21 by tibabaya         ###   ########.fr       */
+/*   Created: 2026/10/27 12:11:25 by tibabaya          #+#    #+#             */
+/*   Updated: 2026/10/27 14:16:32 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	*arr(char *str, int n);
-void	arr_free(int *arr, int n);
+#include <stdlib.h>
 
-int	solver(int **matrix)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	
+	int	i;
+	int	size;
+
+	if (min >= max)
+	{
+		*range = NULL;
+		return (0);
+	}
+	*range = malloc(sizeof(int) * (max - min));
+	if (!(*range))
+	{
+		return (-1);
+	}
+	i = 0;
+	size = max - min;
+	while (min < max)
+	{
+		range[0][i] = min;
+		i++;
+		min++;
+	}
+	return (size);
 }

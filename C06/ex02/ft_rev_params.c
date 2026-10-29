@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_free.c                                      :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/24 18:50:27 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/10/24 18:56:45 by tibabaya         ###   ########.fr       */
+/*   Created: 2026/10/26 13:28:58 by tibabaya          #+#    #+#             */
+/*   Updated: 2026/10/26 13:41:41 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include <unistd.h>
 
-void	matrix_free_er(int **matrix, int size)
+int	main(int argc, char **argv)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (i < size)
+	i = argc - 1;
+	while (i > 0)
 	{
-		free(matrix[i]);
-		i++;
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			write(1, &argv[i][j], 1);
+			j++;
+		}
+		i--;
+		write(1, "\n", 1);
 	}
-	free(matrix);
+	return (0);
 }
