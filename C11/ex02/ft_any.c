@@ -6,10 +6,10 @@
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 00:21:40 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/11/03 00:25:49 by tibabaya         ###   ########.fr       */
+/*   Updated: 2026/11/03 12:14:14 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_any(char **tab, int(*f)(char*))
+int	ft_any(char **tab, int (*f)(char*))
 {
 	int	i;
 

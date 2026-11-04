@@ -6,10 +6,10 @@
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 00:08:33 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/11/03 00:10:09 by tibabaya         ###   ########.fr       */
+/*   Updated: 2026/11/03 12:13:36 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_foreach(int *tab, int length, void(*f)(int))
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int	i;
 

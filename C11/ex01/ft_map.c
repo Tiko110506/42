@@ -6,12 +6,12 @@
 /*   By: tibabaya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 00:17:15 by tibabaya          #+#    #+#             */
-/*   Updated: 2026/11/03 00:20:42 by tibabaya         ###   ########.fr       */
+/*   Updated: 2026/11/03 12:14:02 by tibabaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 
-int	*ft_map(int *tab, int length, int(*f)(int))
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
 	int	*new_tab;
 	int	i;
